@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Input, Image } from 'antd';
 import styled from 'styled-components';
-import { MonitorOutlined } from '@ant-design/icons';
+import { MonitorOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 export const LayoutRow = styled(Row)`
     padding : 15px;
@@ -19,6 +19,16 @@ export const SearchInput = styled(Input)`
 
 export const searchInputSuffix = (
     <MonitorOutlined
+      style={{
+        fontSize: 16,
+        color: '#1890ff',
+        paddingRight : '5px'
+      }}
+    />
+);
+
+export const navInputSuffix = (
+    <MenuFoldOutlined
       style={{
         fontSize: 16,
         color: '#1890ff',
