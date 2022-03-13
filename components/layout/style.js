@@ -13,7 +13,7 @@ export const SearchInputWrapper = styled(Col)`
 `;
 
 export const SearchInput = styled(Input)`
-    border-radius : 20px;
+    border-radius : 10px;
     padding-left : 20px;
 `;
 

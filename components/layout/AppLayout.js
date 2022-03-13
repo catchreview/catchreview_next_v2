@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Row, Col, Drawer, Button, Space, Radio } from 'antd';
+import { Affix, Row, Col, Drawer, Button, Space, Radio, Input } from 'antd';
 import { MonitorOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 import { LayoutRow, SearchInputWrapper, SearchInput, searchInputSuffix, navInputSuffix } from './style';
@@ -22,8 +22,9 @@ const AppLayout = ({ children }) => {
 
     return (
         <>
+        <Affix offsetTop={0}>
             <LayoutRow>
-                <SearchInputWrapper xs={22} md={12}>
+                <SearchInputWrapper xs={24} md={12}>
                     <SearchInput 
                         size="large"
                         prefix={
@@ -40,9 +41,9 @@ const AppLayout = ({ children }) => {
                         placeholder='검색어를 입력해주세요.'
                     />
                 </SearchInputWrapper>
-                <Col xs={1} />
             </LayoutRow>
-            <Drawer
+        </Affix>
+        <Drawer
                 width={250}
                 placement={'left'}
                 onClose={drawOnClose}
@@ -54,8 +55,8 @@ const AppLayout = ({ children }) => {
                 <p>Promotion</p>
                 <p>Some contents...</p>
                 <p>Some contents...</p>
-            </Drawer>
-            {children}
+        </Drawer>
+        {children}
         </>
     )
 };
