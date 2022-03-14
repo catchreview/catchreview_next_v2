@@ -7,7 +7,7 @@ import { LayoutRow, SearchInputWrapper, SearchInput, searchInputSuffix, navInput
 
 
 
-const AppLayout = ({ children }) => {
+const MapLayout = ({ children }) => {
 
     const [ visible, setVisible ] = useState(false);
     
@@ -61,8 +61,8 @@ const AppLayout = ({ children }) => {
     )
 };
 
-AppLayout.propTypes = {
+MapLayout.propTypes = {
     children: PropTypes.node.isRequired,
 }
 
-export default AppLayout;
+export default MapLayout;

@@ -48,7 +48,7 @@ export default function kakaoMapScript() {
         marker.setMap(map);
     
         let iwContent = '<div class="text-center" style="padding:5px; padding-left: 20px;">' +
-            '<a href="/mark/new?x=' + position.Ma +'&y=' + position.La + '" class="text-decoration-none fw-normal" style="color: black;">마크 등록하기</a>' +
+            '<a href="/mark/createForm?x=' + position.Ma +'&y=' + position.La + '" class="text-decoration-none fw-normal" style="color: black;">마크 등록하기</a>' +
             '</div>';
     
     // 인포윈도우를 생성합니다
