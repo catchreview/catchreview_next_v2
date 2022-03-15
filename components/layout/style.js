@@ -48,3 +48,10 @@ export const HeaderRight = styled(Col)`
       text-align : right;
       padding : 15px;
 `;
+
+export const HeaderTitle = styled(Col)`
+      text-align : center;
+      padding : 10px;
+      font-weight : bold;
+      font-size : 18px;
+`;
