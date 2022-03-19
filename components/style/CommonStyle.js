@@ -6,7 +6,6 @@ export const divider = {
     marginTop : '10px'
 }
 
-
 export const boldText = {
     fontWeight: 'bold'
 }
@@ -49,4 +48,8 @@ export const paddingTop15 = {
 
 export const fullWidth = {
     width: '100%'
+}
+
+export const errorText = {
+    color : 'red'
 }

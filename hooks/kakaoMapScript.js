@@ -8,6 +8,7 @@ export default function kakaoMapScript() {
         center: new kakao.maps.LatLng(37.566826, 126.9786567),
         level: 3
     };
+    
     let map = new kakao.maps.Map(container, options);
 
     let ps = new kakao.maps.services.Places();

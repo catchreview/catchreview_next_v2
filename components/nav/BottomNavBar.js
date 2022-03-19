@@ -28,7 +28,7 @@ const BottomNavBar = ({}) => {
                             <div>
                                 <ArrowRightOutlined style={iconFontSize} />
                             </div>
-                            <Link href="/login"><a style={colorBlack}>로그인</a></Link>
+                            <Link href="/secure/login"><a style={colorBlack}>로그인</a></Link>
                         </BottomNavWrapper>
                     }
                 </Col>
