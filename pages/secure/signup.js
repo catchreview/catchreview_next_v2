@@ -7,17 +7,19 @@ import DefaultLayout from '../../components/layout/DefaultLayout';
 
 import { fullWidth, errorText } from '../../components/style/CommonStyle';
 import { SignupFormWrapper } from './style';
+import { useRouter } from 'next/router';
 
 
 
 const Signup = () => {
+
+    const router = useRouter();
 
     const [username, onChangeUsername] = useInput('');
     const [password, onChangePassword] = useInput('');
     const [passwordCheck, setPasswordCheck] = useState('');
     const [passwordError, setPasswordError] = useState(false);
     const onChangePasswordCheck = useCallback((g) => {
-        console.log("??", g.target.value);
         setPasswordCheck(g.target.value);
         setPasswordError(g.target.value !== password);
     }, [password]);

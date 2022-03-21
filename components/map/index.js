@@ -7,7 +7,6 @@ import { MapWrapper, SearchInput, searchInputSuffix, navInputSuffix } from './st
 
 
 const MapSection = ({}) => {
-    
     useEffect(() => {
         kakaoMapScript();
     }, []);

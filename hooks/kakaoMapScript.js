@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 
 export default function kakaoMapScript() {
 
@@ -9,7 +10,7 @@ export default function kakaoMapScript() {
         level: 3
     };
     
-    let map = new kakao.maps.Map(container, options);
+    let map = new kakao.maps.Map(container.current, options);
 
     let ps = new kakao.maps.services.Places();
 

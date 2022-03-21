@@ -1,19 +1,37 @@
 import React, { useCallback } from 'react';
 import { Affix, Row, Col, Form, Image, Input } from 'antd';
-import {LockOutlined, UserOutlined} from '@ant-design/icons';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { divider, floatRight } from '../../components/style/CommonStyle';
 
 import useInput from '../../hooks/useInput';
+import { useRouter } from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { LoginFormWrapper, LoginHeader, LoginForm, LoginButton } from './style';
+import { logInRequestAction } from '../../reducers/auth';
 
 const loginForm = ({}) => {
 
+    const router = useRouter();
+    const dispatch = useDispatch();
+
+    const { logInSuccess, logInError, logInLoading } = useSelector((state) => state.auth);
+    
     const [username, onChangeUsername] = useInput('');
     const [password, onChangePassword] = useInput('');
 
+
     const onSubmitForm = useCallback(() => {
-        
-    });
+        const data = {
+            username : username,
+            password : password,
+        }        
+        dispatch(logInRequestAction(data));
+    }, [username, password]);
+
+    if (logInSuccess) {
+        router.push("/");
+    }
 
     return (
         <>
@@ -72,6 +90,7 @@ const loginForm = ({}) => {
                                 <LoginButton
                                     type="primary"
                                     htmlType="submit"
+                                    loading={logInLoading}
                                 >
                                     Log in
                                 </LoginButton>
