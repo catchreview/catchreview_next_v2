@@ -1,3 +1,4 @@
+/*global kakao*/
 import React, { useState, useRef, useEffect } from 'react';
 import { Row, Col, Affix, Drawer, Space } from 'antd';
 import { MonitorOutlined, MenuFoldOutlined } from '@ant-design/icons';
@@ -9,7 +10,7 @@ import { MapWrapper, SearchInput, searchInputSuffix, navInputSuffix } from './st
 
 
 const MapSection = ({}) => {
-
+    
     useEffect(() => {
         kakaoMapScript();
     }, []);

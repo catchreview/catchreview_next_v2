@@ -4,7 +4,7 @@ export const initialState = {
     isAuthorized: false,
     me : {
         name: 'jake'
-    }
+    },
 }
 
 export const AUTH_SAVE = "AUTH_SAVE";

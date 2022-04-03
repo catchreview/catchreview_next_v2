@@ -1,7 +1,9 @@
 import { all, fork, call, put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
-import {LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS} from "../reducers/auth";
-import {AUTH_SAVE} from "../reducers/user";
+import {
+    LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS
+} from "../reducers/auth";
+import { AUTH_SAVE } from "../reducers/user";
 
 
 function logInRequest(data) {

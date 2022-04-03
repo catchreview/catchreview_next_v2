@@ -1,19 +1,24 @@
 import React, { useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
+
+import { SIGN_UP_REQUEST, SIGN_UP_SUCCESS, SIGN_UP_FAILURE, signUpRequestAction } from '../../reducers/signup';
 import { Form, Input, PageHeader, Radio, Button, Checkbox, Divider } from 'antd';
 
 import useInput from '../../hooks/useInput';
-
 import DefaultLayout from '../../components/layout/DefaultLayout';
-
 import { fullWidth, errorText } from '../../components/style/CommonStyle';
 import { SignupFormWrapper } from './style';
-import { useRouter } from 'next/router';
+
 
 
 
 const Signup = () => {
 
     const router = useRouter();
+    const dispatch = useDispatch();
+
+    const { signUpLoading } = useSelector((state) => state.signup);
 
     const [username, onChangeUsername] = useInput('');
     const [password, onChangePassword] = useInput('');
@@ -63,7 +68,8 @@ const Signup = () => {
         }
 
         console.log(param);
-        router.push('/');
+        dispatch(signUpRequestAction(param));
+        // router.push('/');
 
     }, [password, passwordCheck, term]);
 
@@ -204,6 +210,7 @@ const Signup = () => {
                 <Form.Item>
                     <Button type="primary"
                         htmlType="submit"
+                        loading={signUpLoading}
                         style={fullWidth}
                     >
                         회원가입

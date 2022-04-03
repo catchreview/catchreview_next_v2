@@ -12,7 +12,7 @@ export default function kakaoMapScript() {
             level: 3
         };
         
-        let map = new kakao.maps.Map(container.current, options);
+        let map = new kakao.maps.Map(container, options);
 
         let ps = new kakao.maps.services.Places();
 
