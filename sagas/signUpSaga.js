@@ -7,7 +7,7 @@ import {
 
 function signUpRequest(data) {
     
-    return axios.post("/api/v1/signUp", data, { withCredentials: false });
+    return axios.post("/api/v1/secure/sign-up", data, { withCredentials: false });
 }
 
 function* signUp(action) {

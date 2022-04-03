@@ -30,6 +30,7 @@ const Signup = () => {
     }, [password]);
 
     const [name, onChangeName] = useInput('');
+    const [nickname, onChangeNickName] = useInput('');
     const [mobile, onChangeMobile] = useInput('');
     const [gender, onChangeGender] = useInput('');
     const [birth, onChangeBirth] = useInput('');
@@ -60,11 +61,12 @@ const Signup = () => {
         const param = {
             username : username,
             password : password,
+            nickname : nickname,
             name : name,
-            gender : gender,
+            gender : 'M',
             birth : birth,
-            term : term,
-            marketing : marketing,
+            privacyConfirm : term ? 'Y' : 'N',
+            // marketingConfirm : marketing,
         }
 
         console.log(param);
@@ -136,6 +138,19 @@ const Signup = () => {
                         onChange={onChangePasswordCheck}
                     />
                     {passwordError && <div style={errorText}>비밀번호가 일치하지 않습니다.</div>}
+                </Form.Item>
+
+                <Form.Item
+                    label="닉네임"
+                    name="nickname"
+                    rules={[
+                        {
+                            required: true,
+                            message: 'Please input your nickname!',
+                        },
+                    ]}
+                >
+                    <Input type="text" name="nickname" value={nickname} required onChange={onChangeNickName} />
                 </Form.Item>
 
                 <Form.Item
